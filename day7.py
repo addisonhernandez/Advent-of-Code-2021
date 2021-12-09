@@ -15,6 +15,9 @@ def main():
     pos = int(np.median(crabs))
     print(f"{pos = }\tTotal cost: {total_cost(crabs, pos)}")
 
+    pos = int(np.mean(crabs))
+    print(f"{pos = }\tTotal cost: {total_cost(crabs, pos, part_2=True)}")
+
 
 def total_cost(arr: np.ndarray, pos: int, part_2=False) -> int:
     cost = np.abs(arr - pos)
