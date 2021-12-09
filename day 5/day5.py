@@ -8,20 +8,20 @@ import re
 
 def main():
     # Read from file
-    with open("day5.txt", "r") as infile:
+    with open("day 5/day5.txt") as infile:
         points = re.findall(r"\d+", infile.read())
         points = np.asarray(points, dtype=int).reshape(-1, 4)
 
-    # Create Zeros(max, max)
+    # Create 2x2 field to track vents
     field_size = points.max() + 1
     field = np.zeros((field_size, field_size), dtype=int)
 
-    # Draw lines
+    # Draw lines on the field
     for x, y, x2, y2 in points:
         # # Part 1: Ignore diagonal lines
         # if x != x2 and y != y2:
         #     continue
-        
+
         dx, dy = np.sign((x2 - x, y2 - y))
 
         # mark field from start (x, y) -> end (x2, y2)
