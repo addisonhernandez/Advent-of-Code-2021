@@ -1,11 +1,2 @@
-day1.txt
-day2.txt
-day3.txt
-day3test.txt
-day4.txt
-day4test.txt
-day5.txt
-day5test.txt
-day6.txt
-day6test.txt
+*.txt
 .vscode/settings.json
