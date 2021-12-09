@@ -17,7 +17,8 @@ def main():
 
 
 def total_cost(arr: np.ndarray, pos: int, part_2=False) -> int:
-    return np.sum(np.abs(arr - pos))
+    cost = np.abs(arr - pos)
+    return np.sum(cost * (cost + 1) // 2) if part_2 else np.sum(cost)
 
 
 if __name__ == "__main__":
