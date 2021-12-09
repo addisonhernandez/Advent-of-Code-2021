@@ -7,7 +7,7 @@ import numpy as np
 
 def main():
     # Parse crab positions from file
-    with open("day7.txt") as infile:
+    with open("day 7/day7.txt") as infile:
         crabs = np.loadtxt(infile, dtype=int, delimiter=",")
 
     # Part 1: Calculate optimal position for constant fuel usage
@@ -21,8 +21,8 @@ def main():
 
 def total_cost(arr: np.ndarray, pos: int, part_2=False) -> int:
     """Calculates fuel consumption to move crabs at positions in `arr` to `pos`.
-    
-    Part 1: constant fual consumption is absolute value of difference of 
+
+    Part 1: constant fuel consumption is the absolute value of difference of
         current crab position and final position
     Part 2: each move the crab makes increases fuel consumption by 1.
         2 moves -> (1 + 2) fuel consumed
