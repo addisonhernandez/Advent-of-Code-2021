@@ -2,6 +2,8 @@
 https://adventofcode.com/2021/day/8
 """
 
+from collections import Counter
+
 
 def main():
     # Parse input file
@@ -18,10 +20,16 @@ def main():
 
 
 def one_four_seven_eight(lst: list) -> int:
-    """Counts number of 1, 4, 7, and 8 in a list of 7-segment display signals."""
-
-    unique_lengths = {2, 4, 3, 7}  # one, four, seven, eight
-    return sum(1 for line in lst for item in line if len(item) in unique_lengths)
+    """Counts number of 1, 4, 7, and 8 in a list of 7-segment display signals.
+    
+    Each of 1, 4, 7, and 8 has a unique number of segments lit:
+        1: two segments
+        4: four segemnts
+        7: three segments
+        8: seven segments
+    """
+    c = Counter(len(item) for line in lst for item in line)
+    return sum((c[2], c[4], c[3], c[7]))
 
 
 if __name__ == "__main__":
